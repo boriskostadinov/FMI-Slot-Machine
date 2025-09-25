@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,23 +11,26 @@
   <title>Slot Machine</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <div class="ea-logo cascadia-mono-500">
+    <img src="logo-full_1.svg" alt="Logo" style="height:60px;">
+    <p class="cascadia-mono-500">Get 2 or 3 of the same symbols in the middle line to win a price!</p>
+</div>
 <body>
 
   <div class="slots">
     <div class="reel"></div>
     <div class="reel"></div>
     <div class="reel"></div>    
-    <p>Get 2 or 3 of the same symbols in the middle line to win a price!</p>
   </div>
   <br>
 
   <div class="btn">
-    <button id="spin">SPIN</button>
+    <button id="spin" class="cascadia-mono-200">Try Your Luck</button>
   </div>
   
   <div id="debug" class="debug"></div>
 
-  <img class="bg" src="slotreel-edited.webp" alt="Background">
+  <img class="bg" src="final_image.jpg" alt="Background">
 
 
 

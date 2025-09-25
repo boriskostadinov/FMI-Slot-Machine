@@ -43,14 +43,14 @@ const roll = (reel, offset = 0) => {
  * Roll all reels
  */
 function rollAll() {
-  debugEl.textContent = 'rolling...';
+  // debugEl.textContent = 'rolling...';  // Debug text
 
   const reelsList = document.querySelectorAll('.slots > .reel');
 
   Promise.all([...reelsList].map((reel, i) => roll(reel, i)))
     .then((deltas) => {
       deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
-      debugEl.textContent = indexes.map((i) => iconMap[i]).join(' - ');
+      // debugEl.textContent = indexes.map((i) => iconMap[i]).join(' - ');  // Show result in text form
 
     //   if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
     //     const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
