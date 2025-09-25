@@ -1,6 +1,7 @@
 const debugEl = document.getElementById('debug'),
   // Mapping of indexes to icons: start from banana in middle of initial position and then upwards
-  iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"],
+//   iconMap = ["banana", "seven", "cherry", "plum", "orange", "bell", "bar", "lemon", "melon"],
+  iconMap = ["bottle", "bag", "bag", "book", "book", "cap", "cap", "pen", "swiss"],
   // Width of the icons
   icon_width = 79,
   // Height of one icon in the strip
@@ -51,15 +52,20 @@ function rollAll() {
       deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % num_icons);
       debugEl.textContent = indexes.map((i) => iconMap[i]).join(' - ');
 
-      if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
-        const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
+    //   if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {
+    //     const winCls = indexes[0] == indexes[2] ? "win2" : "win1";
+    //     document.querySelector(".slots").classList.add(winCls);
+    //     setTimeout(() => document.querySelector(".slots").classList.remove(winCls), 5000);
+    //   }
+      const icons = indexes.map(i => iconMap[i]);
+      if (icons[0] === icons[1] || icons[1] === icons[2] || icons[0] === icons[2]) {
+        const winCls = (icons[0] === icons[1]) && (icons[1] === icons[2])  ? "win2" : "win1";
         document.querySelector(".slots").classList.add(winCls);
-        setTimeout(() => document.querySelector(".slots").classList.remove(winCls), 2000);
+        setTimeout(() => document.querySelector(".slots").classList.remove(winCls), 5000);
       }
-
-      setTimeout(rollAll, 3000);
     });
 }
 
-// Kickoff
-setTimeout(rollAll, 1000);
+
+// Kickoff on button press
+document.getElementById('spin').addEventListener('click', rollAll);

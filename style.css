@@ -95,7 +95,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   overflow: hidden;
-  background-image: url(https://assets.codepen.io/439000/slotreel.webp);
+  background-image: url(slotreel-edited.webp);
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -138,6 +138,25 @@ body {
   height: 100vh;
   width: auto;
   z-index: -1;
+}
+
+
+#spin {
+  display: block;
+  margin: 24px auto 0 auto;
+  padding: 12px 32px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffcc00 0%, #ff6600 100%);
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#spin:hover {
+  background: linear-gradient(45deg, #ff6600 0%, #ffcc00 100%);
 }
 
 .author-link {
